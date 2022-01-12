@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 
-var emojiDictionary = {
+let emojiDictionary = {
   "😂": "laughing",
   "😭": "crying",
   "👌": "ok hand",
@@ -21,23 +21,23 @@ var emojiDictionary = {
   "🌸": "cherry blossom",
   "😞": "tired",
   "😃": "grinning",
-  "🤦": "person facepalming"
+  "🤦": "person facepalming",
 };
 
-var emojisWeKnow = Object.keys(emojiDictionary);
+let emojisWeKnow = Object.keys(emojiDictionary);
 
 export default function App() {
-  var [meaning, setMeaning] = useState("");
+  let [meaning, setMeaning] = useState("");
 
-  function emojiInputHandler(event) {
-    var userInput = event.target.value;
-    var meaning = emojiDictionary[userInput];
+  const emojiInputHandler = (event) => {
+    let userInput = event.target.value;
+    let meaning = emojiDictionary[userInput];
     setMeaning(meaning);
-  }
-  function emojiClickHandler(emoji) {
-    var meaning = emojiDictionary[emoji];
+  };
+  const emojiClickHandler = (emoji) => {
+    let meaning = emojiDictionary[emoji];
     setMeaning(meaning);
-  }
+  };
   return (
     <div className="App">
       <h1>emoji interpreter</h1>
@@ -66,4 +66,3 @@ export default function App() {
     </div>
   );
 }
-
